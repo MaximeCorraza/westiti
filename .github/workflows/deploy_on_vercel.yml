@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Debug - Vérifier la structure du repo
-        run: ls -al # ✅ Vérifie la structure des dossiers
+        run: ls -al # ✅ Vérifie la structure des dossier
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -32,7 +32,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
         working-directory: App
-        
+
       - name: Build Project
         run: npm run build
         working-directory: App

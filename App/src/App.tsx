@@ -1,4 +1,3 @@
-
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import AOS from "aos";
 import { ToastContainer } from "react-toastify";
@@ -7,8 +6,7 @@ import Signin from "./Pages/Signin";
 import Signup from "./Pages/Signup";
 import Profile from "./Pages/Profile";
 import Event from "./Pages/Event";
-import { HelmetProvider } from 'react-helmet-async';
-//import Contact from "./Pages/Contact";
+import { HelmetProvider } from "react-helmet-async";
 
 import Dashboard from "./Pages/Dashboard";
 import NotFound from "./Pages/NotFound";
@@ -26,13 +24,12 @@ import { useEffect } from "react";
 //  }
 
 const App = () => {
-
   useEffect(() => {
     AOS.init();
-  }, [])
+  }, []);
 
   return (
-    <HelmetProvider >
+    <HelmetProvider>
       <BrowserRouter /* basename="/" */>
         <Routes>
           <Route path="/" element={<Homepage />} />

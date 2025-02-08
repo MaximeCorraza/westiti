@@ -20,18 +20,15 @@ const Signin = () => {
   const { showLoader, hideLoader } = useLoader(); // Utilisation du hook Loader
 
   const handleLogin = async (e: any): Promise<void> => {
-    
-
     showLoader();
     e.preventDefault();
     try {
-      const response: any = await submitLogin(e, password, email);
-      
+      const response: any = await submitLogin(e, password, email.toLowerCase);
+
       if (response.status === 401) {
         onError(response.response.data.message);
       }
       if (response !== undefined) {
-       
         localStorage.setItem("isConnected", "true");
         localStorage.setItem("userId", response.data.user.id);
         localStorage.setItem("username", response.data.user.username);
@@ -40,11 +37,8 @@ const Signin = () => {
         hideLoader();
         return;
       }
-      
     } catch (error) {
       console.log(error);
-      
-     
     }
   };
   //@ts-ignore

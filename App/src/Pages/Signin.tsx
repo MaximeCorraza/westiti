@@ -23,7 +23,7 @@ const Signin = () => {
     showLoader();
     e.preventDefault();
     try {
-      const response: any = await submitLogin(e, password, email.toLowerCase);
+      const response: any = await submitLogin(e, password, email.toLowerCase());
 
       if (response.status === 401) {
         onError(response.response.data.message);

@@ -91,7 +91,7 @@ export class AuthService {
     
     return {
       message: 'Connexion réussie',
-      user: { id: user.id, username: user.name },
+      user: { id: user.id, username: user.name, email: user.email },
     };
   }
 }

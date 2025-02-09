@@ -32,6 +32,7 @@ const Signin = () => {
         localStorage.setItem("isConnected", "true");
         localStorage.setItem("userId", response.data.user.id);
         localStorage.setItem("username", response.data.user.username);
+        localStorage.setItem("email", response.data.user.email);
         onSuccess("Connexion réussie");
         navigate(`/dashboard/${localStorage.getItem("userId")}`);
         hideLoader();
